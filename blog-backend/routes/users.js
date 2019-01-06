@@ -9,12 +9,12 @@ router.get('/api/user', async (ctx, next) => {
   let value = ''
   await db.query(sql, value).then(res => {
     if (res && res.length > 0) {
-      // console.log(res)
       ctx.body = {...Tips[0], data: res}
     } else {
       ctx.body = Tips[1005]
     }
   }).catch(e => {
+    console.log(666)
     ctx.body = Tips[1005]
   })
 })
