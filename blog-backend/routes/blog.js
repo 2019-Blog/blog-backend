@@ -7,7 +7,7 @@ const Tips = require('../utils/tip')
  * get title & id
  */
 router.get('/api/blog/getTitle', async (ctx, next) => {
-  let sql = 'select title,id from blog;'
+  let sql = 'select title,id from blog order by id desc;'
   let value = ''
   await db.query(sql, value).then(res => {
     if (res && res.length > 0) {
